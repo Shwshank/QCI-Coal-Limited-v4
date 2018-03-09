@@ -1,0 +1,50 @@
+<div class="section" >
+  <div class="container-fluid text-center" >
+    <div  data-aos="zoom-in"  data-aos-delay="250" data-aos-offset="100" >
+
+      <div class="row justify-content-center whiteBlock" style="width:95%; margin:0 auto">
+
+        <div class="frontText" >
+          <div class="" >
+            <div style="float:left" > Monthly Lifting </div>
+
+            <div style="float:right;" >
+              <div class="dropdown " style="margin-left:20px">
+                <select class="btn dropdown-toggle" [(ngModel)]="selectedLocation"  (change)='getLocationData()'>
+                  <option >All Locations</option>
+                  <option *ngFor='let sub of subsidaryLocation_name'  >{{sub}}</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="float:right;" >
+              <div class="dropdown " style="margin-left:20px">
+                <select class="btn dropdown-toggle" [(ngModel)]="selectedSubsidary" (change)='getSubsidaryData()' >
+                  <option >All</option>
+                  <option *ngFor='let sub of subsidary_name'  >{{sub.name}}</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="float:right;" >
+              <div class="dropdown " style="margin-left:20px">
+                <select class="btn dropdown-toggle" [(ngModel)]="selectedMonth" (change)='getMonthData()'>
+                  <option >Aug - 17</option>
+                  <option *ngFor='let sub of month_name'  >{{sub}}</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-12  divHeight" >
+          <div echarts [options]="option8" class="demo-chart"></div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
