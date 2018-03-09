@@ -307,7 +307,7 @@ export class ProjectService {
   getGraphData8(month, subsidary, location) {
     this.APIService.GetNewLocationMonthlyLifting(month, subsidary, location).subscribe(res=>{
       console.log(res);
-      this.emitOption8.emit({xAxisData: res.x, data: res.y});
+      this.emitOption8.emit({xAxisData: res.x, data: res.y, lifting: res.lifting});
     });
     console.log(month+', '+subsidary+', '+location);
   }

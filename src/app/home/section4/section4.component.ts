@@ -17,11 +17,13 @@ export class Section4Component implements OnInit {
   sub4: any;
   sub5: any;
 
+  lifting: any = true;
+
   option8_xAxisData: any;
   option8_data: any;
 
   selectedMonth: any = 'Feb - 18';
-  selectedSubsidary: any = 'ALL';
+  selectedSubsidary: any = 'All';
   selectedLocation: any = 'All Locations';
 
   subsidary_name: any = [];
@@ -33,6 +35,7 @@ export class Section4Component implements OnInit {
     this.sub1 = this.projectService.emitOption8.subscribe(res=>{
       this.option8_xAxisData = res.xAxisData;
       this.option8_data = res.data;
+      this.lifting = res.lifting;
       this.getOption8();
     });
 
@@ -68,7 +71,10 @@ export class Section4Component implements OnInit {
         align: 'left',
         selectedMode: false
       },
-      tooltip: {},
+      tooltip : {
+        trigger: 'item',
+        formatter: "Day" + '：' + '{b}' + '<br>' + "Volume Lifted" + '：' + '{c}' + " mmt"
+      },
       xAxis: {
         data: xAxisData,
         silent: false,

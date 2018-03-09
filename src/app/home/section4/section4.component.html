@@ -39,6 +39,7 @@
         </div>
 
         <div class="col-12  divHeight" >
+          <div *ngIf="!lifting" > <p style="margin-top:0px; margin-bottom:0px"> No lifting data found! </p> </div>
           <div echarts [options]="option8" class="demo-chart"></div>
         </div>
 

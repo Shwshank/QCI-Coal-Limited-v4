@@ -83,7 +83,7 @@ export class Section3Component implements OnInit {
 
   ngOnInit() {
     this.projectService.getSubsidarySummary(this.selectedSubsidary);
-        
+
     this.projectService.getGraphData5(this.selectedSubsidary);
     this.projectService.getGraphData6(this.selectedSubsidary);
     this.projectService.getGraphData7(this.selectedSubsidary);
@@ -256,7 +256,7 @@ export class Section3Component implements OnInit {
                                     color: 'white'
                                 }
                             },
-                              name:'Refree Challenge',
+                              name:'Referee Challenge',
                               selectedMode: 'single',
                               selectedOffset: 30,
                               type:'pie',
